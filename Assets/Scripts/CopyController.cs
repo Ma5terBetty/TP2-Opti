@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CopyController : EntityBase
+public class CopyController : MonoBehaviour
 {
     [SerializeField] private PlayerController player;
     private Vector3 _reverseDirection;
