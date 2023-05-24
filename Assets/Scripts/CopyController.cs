@@ -12,6 +12,7 @@ public class CopyController : EntityBase
     {
         _reverseDirection = new Vector3(player.MoveDirection.x, 0, -player.MoveDirection.z);
         
-        Move(_reverseDirection);
+        Move(_reverseDirection.normalized);
+        transform.forward = -_reverseDirection;
     }
 }

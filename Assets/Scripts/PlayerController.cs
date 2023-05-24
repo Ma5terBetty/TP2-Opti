@@ -11,6 +11,7 @@ public class PlayerController : EntityBase
     private void Update()
     {
         MoveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-        Move(MoveDirection);
+        Move(MoveDirection.normalized);
+        transform.forward = MoveDirection;
     }
 }
