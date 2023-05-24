@@ -8,6 +8,7 @@ public class PlayerController : EntityBase
 {
     public Vector3 MoveDirection { get; private set; }
 
+    //Movimiento simple basado en Axis
     private void Update()
     {
         MoveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
