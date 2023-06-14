@@ -25,14 +25,12 @@ public class EntityController : MonoBehaviour
     private void Start()
     {
         _isModelNull = _model == null;
+        GameManager.Instance.OnLevelReload += OnLevelReloadHandler;
     }
     
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            SetTargetPos();
-        }
+        if(GameManager.Instance.IsPaused) return;
 
         if (!IsCloseToTargetPoint())
         {
@@ -40,7 +38,7 @@ public class EntityController : MonoBehaviour
         }
     }
 
-    private void SetTargetPos()
+    public void SetTargetPos()
     {
         if (_isModelNull) return;
         
@@ -68,6 +66,10 @@ public class EntityController : MonoBehaviour
         var dist =  Vector3.Distance(_model.Position, _targetPosition);
         return dist <= minDistanceToPos;
     }
-
+    
+    private void OnLevelReloadHandler()
+    {
+        _model.ResetPosition();
+    }
 
 }

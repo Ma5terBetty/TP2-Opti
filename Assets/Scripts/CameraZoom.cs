@@ -27,21 +27,16 @@ public class CameraZoom : MonoBehaviour
         _startValue = _current;
     }
 
-    private void Update()
+    public void DoZoom(float scroll)
     {
-        var scroll = Input.GetAxis("Mouse ScrollWheel");
         _current -= scroll * multiplier;
         _current = Mathf.Clamp(_current, min, max);
         _camera.orthographicSize = Mathf.SmoothDamp(_camera.orthographicSize, _current, ref velocity, smoothTime);
-        
-        if(Input.GetMouseButtonDown(1))
-            ResetValue();
-
-        Debug.Log(Input.GetAxis("Mouse ScrollWheel"));
     }
 
-    private void ResetValue()
+    public void ResetValue()
     {
         _current = _startValue;
+        _camera.orthographicSize = Mathf.SmoothDamp(_camera.orthographicSize, _current, ref velocity, smoothTime);
     }
 }
