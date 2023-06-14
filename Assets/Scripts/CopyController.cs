@@ -11,7 +11,7 @@ public class CopyController : MonoBehaviour
 
     private void Update()
     {
-        //Aplicamos orientación invertida del jugador.
+        //Aplicamos orientaciÃ³n invertida del jugador.
         _reverseDirection = new Vector3(player.MoveDirection.x, 0, -player.MoveDirection.z);
         transform.forward = -_reverseDirection;
 
@@ -23,7 +23,7 @@ public class CopyController : MonoBehaviour
         transform.position = MiddleDifference();
     }
 
-    //Copio la posición del jugador en ejes X e Y y modifico el z según su posición contra el espejo.
+    //Copio la posiciÃ³n del jugador en ejes X e Y y modifico el z segÃºn su posiciÃ³n contra el espejo.
     Vector3 MiddleDifference()
     {
         float x = player.transform.position.x;
