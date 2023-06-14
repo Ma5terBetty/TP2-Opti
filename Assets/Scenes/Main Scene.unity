@@ -7240,8 +7240,8 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 2
-  m_Range: 10
-  m_SpotAngle: 179
+  m_Range: 1
+  m_SpotAngle: 152.1
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
@@ -8438,7 +8438,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0, g: 0.754717, b: 0.46056315, a: 1}
   m_Intensity: 2
-  m_Range: 2
+  m_Range: 5
   m_SpotAngle: 179
   m_InnerSpotAngle: 1
   m_CookieSize: 10
@@ -9545,6 +9545,7 @@ GameObject:
   - component: {fileID: 1646284405}
   - component: {fileID: 1646284404}
   - component: {fileID: 1646284403}
+  - component: {fileID: 1646284406}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -9586,7 +9587,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 47
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -9611,13 +9612,30 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1646284402}
   m_LocalRotation: {x: -0.41293073, y: -0.30512142, z: 0.14907275, w: -0.8450837}
-  m_LocalPosition: {x: -8.44, y: 9.83, z: -9.83}
+  m_LocalPosition: {x: -4.5, y: 10.65, z: -11.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1646284406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646284402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd2e9805dec2cb4ab69768dc9f456b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multiplier: 10
+  min: 30
+  max: 30
+  velocity: 10
+  smoothTime: 1
 --- !u!1 &1659771803
 GameObject:
   m_ObjectHideFlags: 0
@@ -11873,7 +11891,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.8978912, b: 0.4575472, a: 1}
-  m_Intensity: 1
+  m_Intensity: 2
   m_Range: 3
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
