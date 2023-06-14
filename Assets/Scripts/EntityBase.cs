@@ -13,11 +13,20 @@ public class EntityBase : MonoBehaviour
     private Rigidbody _rb;
     private Quaternion _targetRotation;
 
+    private Vector3 _startPosition;
+    private Quaternion _startRotation;
+
     public Vector3 Position => transform.position;
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
+    }
+
+    private void Start()
+    {
+        _startPosition = transform.position;
+        _startRotation = transform.rotation;
     }
 
     public void Move(Vector3 direction)
@@ -33,5 +42,11 @@ public class EntityBase : MonoBehaviour
         direction.y = 0;
         var newRotation = Vector3.RotateTowards(transform.forward, direction, rotationSpeed * Time.deltaTime, 0.0f);
         transform.rotation= Quaternion.LookRotation(newRotation);  
+    }
+
+    public void ResetPosition()
+    {
+        transform.position = _startPosition;
+        transform.rotation = _startRotation;
     }
 }
