@@ -7,7 +7,7 @@ public class CameraZoom : MonoBehaviour
 {
     [Range(1,10)][SerializeField] private float multiplier = 4;
     [Range(1,30)][SerializeField] private float min = 2;
-    [Range(1,30)][SerializeField] private float max = 10;
+    [Range(1,30)][SerializeField] private float max = 30;
     [SerializeField] private float velocity = 5;
     [Range(0.1f, 1f)][SerializeField] private float smoothTime = 0.25f;
 
@@ -36,6 +36,8 @@ public class CameraZoom : MonoBehaviour
         
         if(Input.GetMouseButtonDown(1))
             ResetValue();
+
+        Debug.Log(Input.GetAxis("Mouse ScrollWheel"));
     }
 
     private void ResetValue()
